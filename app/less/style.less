@@ -1,0 +1,95 @@
+@import "commons.less";
+
+.main_screen{
+	background-image: url(../img/bg_main_screen.png);
+	background-size: cover;
+	color: @grey;
+	text-align: center;
+	&-info{
+		height: 80vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	&-decor{
+		.Monts;
+		display: block;
+		background-color: @blue;
+		text-transform: uppercase;
+		font-size: 18px;
+		line-height: 18px;
+		padding: 10px 21px 7px 21px;
+	}
+	&-border_header{
+		border: 10px @grey solid;
+		padding: 33px 45px;
+	}
+	&-header{
+		font-size: 48px;
+		line-height: 48px;
+		text-transform: uppercase;
+	}
+	&-text{
+		.OpenSans;
+		font-size: 16px;
+		padding-top: 32px;
+		line-height: 24px;
+	}
+}
+.navigation{
+	height: 20px;
+	padding: 43px 80px;
+	display: flex;
+	justify-content: space-between;
+	&-logo{
+		.Monts;
+		color: @grey;
+		font-size: 18px;
+		text-transform: uppercase;
+	}
+}
+.menu{
+	&-hover{
+		display: block;
+		cursor: pointer;
+		height: 15px;
+	}
+	&-burger{
+		
+		position: relative;
+		background-color: @grey;
+		width: 31px;
+		height: 1px;
+		&:before{
+			content: "";
+			background-color: @grey;
+			position: absolute;
+			margin-top: 6px;
+			display: block;
+			width: 15px;
+			height: 1px;
+		}
+		&:after{
+			content: "";
+			background-color: @grey;
+			position: absolute;
+			margin-top: 13px;
+			display: block;
+			width: 23px;
+			height: 1px;
+		}
+	}
+}
+
+.history{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	&-img{
+		top: 100px;
+		position: relative;
+		width: 35%;
+		margin-right: 130px;
+	}
+}
