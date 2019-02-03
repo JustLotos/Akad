@@ -10,7 +10,8 @@ var gulp          = require('gulp'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require("gulp-notify"),
-		rsync         = require('gulp-rsync');
+		rsync         = require('gulp-rsync'),
+		concatCss = require('gulp-concat-css');
 
 gulp.task('browser-sync', function() {
 	browserSync({
@@ -25,11 +26,13 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('styles', function() {
-	return gulp.src('app/less/**/*.'+syntax+'')
-	.pipe(less({ outputStyle: 'expanded' }).on("error", notify.onError()))
-	.pipe(rename({ suffix: '.min', prefix : '' }))
+	return gulp.src('app/less/style.less')
+	.pipe(less().on("error", notify.onError()))
+	
+	.pipe(concat("style.css"))
 	.pipe(autoprefixer(['last 15 versions']))
-	.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
+	.pipe(rename({ suffix: '.min', prefix : '' }))
+	.pipe(cleancss( {level: { 1: { specialComments: 0 } } }))
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream())
 });

@@ -1,95 +1,315 @@
-@import "commons.less";
 
-.main_screen{
-	background-image: url(../img/bg_main_screen.png);
-	background-size: cover;
-	color: @grey;
-	text-align: center;
-	&-info{
-		height: 80vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-	&-decor{
-		.Monts;
-		display: block;
-		background-color: @blue;
-		text-transform: uppercase;
-		font-size: 18px;
-		line-height: 18px;
-		padding: 10px 21px 7px 21px;
-	}
-	&-border_header{
-		border: 10px @grey solid;
-		padding: 33px 45px;
-	}
-	&-header{
-		font-size: 48px;
-		line-height: 48px;
-		text-transform: uppercase;
-	}
-	&-text{
-		.OpenSans;
-		font-size: 16px;
-		padding-top: 32px;
-		line-height: 24px;
-	}
+//------------ BASE STYLES -----------------------------------------------------------------
+
+@blue: #7beec7;
+@grey: #60606e;
+
+.arab {
+  font-family: "arabtype", sans-serif;
+  font-weight: normal;
 }
-.navigation{
-	height: 20px;
-	padding: 43px 80px;
-	display: flex;
-	justify-content: space-between;
-	&-logo{
-		.Monts;
-		color: @grey;
-		font-size: 18px;
-		text-transform: uppercase;
-	}
+.Monts {
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  font-weight: 700;
+}
+.OpenSans {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+}
+*{
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+//----------- COMPONENTS --------------------------------------------------------------------------
+
+.text{
+  .OpenSans;
+  color: lighten(@grey, 10%);
+  line-height: 24px;
+  font-size: 14px;
+}
+.header {
+  .Monts;
+  color: @grey;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 48px;
+  z-index: 10;
+  position: relative;
+}
+.blue_block {
+  position: absolute;
+  display: block;
+  background-color: #7beec7;
+  width: 67px;
+  height: 21px;
+  top: 22px;
+  z-index: -1;
+}
+.blue_button{
+  .Monts;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: none;
+  background-color: @blue;
+  color: white;
+}
+.logo{
+  .Monts;
+  display: block;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 48px;
+  margin-top: 33px;
+  &-link{
+    color: @grey;
+    &:hover{
+      text-decoration: none;
+      color: @blue;
+    }
+  }
 }
 .menu{
-	&-hover{
-		display: block;
-		cursor: pointer;
-		height: 15px;
-	}
-	&-burger{
-		
-		position: relative;
-		background-color: @grey;
-		width: 31px;
-		height: 1px;
-		&:before{
-			content: "";
-			background-color: @grey;
-			position: absolute;
-			margin-top: 6px;
-			display: block;
-			width: 15px;
-			height: 1px;
-		}
-		&:after{
-			content: "";
-			background-color: @grey;
-			position: absolute;
-			margin-top: 13px;
-			display: block;
-			width: 23px;
-			height: 1px;
-		}
-	}
+  margin-top: 43px;
+  &-burger{
+    display: block;
+    width: 31px;
+    height: 1px;
+    background-color: @grey;
+    &:after{
+      content: "";
+      position: relative;
+      display: block;
+      margin-top: 13px;
+      width: 23px;
+      height: 1px;
+      background-color: @grey;
+    }
+    &:before{
+      content: "";
+      position: relative;
+      display: block;
+      margin-top: 6px;
+      width: 15px;
+      height: 1px;
+      background-color: @grey;
+    }
+  }
+  &-link{
+    position: relative;
+    left: 100%;
+    margin-left: -31px;
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+  }
+}
+.send{
+  background-color: @blue;
+  padding: 50px 80px;
+  &-header{
+    color: white;
+    margin-bottom: 25px;
+  }
+  &-button{
+    .Monts;
+    text-transform: uppercase;
+    border: none;
+    padding: 15px 30px;
+    background-color: #fff;
+    color: @blue;
+  }
+  &-form{
+    max-width: 560px;
+    padding: 20px 25px;
+    background-color: white;
+  }
+  &-subtitle{
+    .Monts;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: @grey;
+  }
+  &-text{
+    .OpenSans;
+    margin: 15px 0;
+    color: lighten(@grey, 15%);
+    line-height: 24px;
+    font-size: 16px;
+  }
+  &-email{
+    border: 1px solid lighten(@grey,50%);
+    width: 375px;
+    padding: 20px;
+    &::placeholder{
+      .Monts;
+      font-size: 12px;
+      color: lighten(@grey,15%);
+    }
+  }
+  &-submit{
+    margin-right: -2px;
+    padding: 22px 45px;
+  }
+}
+//----------- MODULES --------------------------------------------------------------------------
+
+.main_screen{
+  background-image: url(../img/bg_main_screen.png);
+	background-size: cover;
+  height: 120vh; 
+   &-hover{
+    margin-top: 165px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+  }
+  &-blue_block{
+    display: inline-block;
+    .Monts;
+    background-color: @blue;
+    padding: 10px 21px;
+    color: @grey;
+    line-height: 18px;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  &-header{
+    .Monts;
+    padding: 33px 47px;
+    font-size: 48px;
+    line-height: 48px;
+    text-transform: uppercase;
+    color: @grey;
+    border: 10px solid @grey;
+
+  }
+  &-text{
+    line-height: 24px;
+  }
 }
 
 .history{
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	&-img{
-		top: 100px;
-		position: relative;
-		width: 35%;
-		margin-right: 130px;
-	}
+  margin-top: 150px;
+  &-text{
+    margin-bottom: 0;
+    
+    line-height: 30px;
+    font-size: 16px;
+  }
+  &-button{
+    cursor: pointer;
+    position: relative;
+    left: 100%;
+    margin-top: 25px;
+    margin-left: -165px;
+    padding: 20px 50px;
+  }
+}
+
+.reason{
+  height: 100vh;
+  &-hover{
+    margin-top: 250px;
+    margin-bottom: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &-box{
+    margin-bottom: 50px;
+    flex-basis: 230px;
+    margin-right: 80px;
+  }
+  &-list_header{
+    .Monts;
+    display: block;
+    text-transform: uppercase;
+    color: @grey;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  &-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &-icon{
+    display: block;
+    text-transform: uppercase;
+    color: lighten(@grey, 14%);
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 20px;
+  }
+  &-element{
+    color: lighten(@grey, 15%);
+  }
+  &-img{
+    display: block;
+    
+  }
+}
+
+.portfolio{
+  height: 150vh;
+  margin-bottom: 150px;
+  &-hover{
+    margin: 100px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &-header{
+    margin-bottom: 50px;
+  }
+  &-list{
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &-element{
+    .Monts;
+    text-transform: uppercase;
+    margin-left: 15px;
+    font-size: 14px;
+    color: lighten(@grey, 5%);
+    margin-bottom: 25px;
+  }
+  &-link{
+    color: @grey;
+    &:hover{
+      text-decoration: none;
+      color: @grey;
+    }
+  }
+  &-active_link{
+    position: relative;
+    
+    background-color: @blue;
+    display: inline-block;
+    padding: 3px 20px;
+    margin-left: 0;
+    .portfolio-link {
+      color: white;
+    }
+  }
+  &-img{
+    margin: 15px;
+  }
 }
