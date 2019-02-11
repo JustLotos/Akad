@@ -5,45 +5,85 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>AKAD CREATIVE</title>
+
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="css/bootstrap-reboot.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
 	<link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-	<section class="main_screen">
+
+	<header class="header">
 		<div class="container">
-			<div class="row">
-				<div class="col-6">
-					<span class="logo"><a href="index.html" class="logo-link">akad.</a></span>
+			<span class="logo">
+				<a href="index.html" class="logo-link">akad.</a>
+			</span>
+					
+			<div class="menu-burger menu-burger_closed">
+				<span class="menu-burger_line"></span>
+			</div>
+				<nav class="menu menu-closed">
+					<ul class="menu-list">
+						<li class="menu-element">
+							<a href="index.html" class="menu-link">Home</a>
+						</li>
+						<li class="menu-element">
+							<a href="about_us.html" class="menu-link">about us</a>
+						</li>
+						<li class="menu-element">
+							<a href="services.html" class="menu-link">services</a>
+						</li>
+						<li class="menu-element">
+							<a href="portfolio.html" class="menu-link">portfolio</a>
+							<ul class="menu-option">
+								<li class="menu-element"><a href="#" class="menu-link">portfolio list</a></li>
+								<li class="menu-element"><a href="#" class="menu-link">single project 1</a></li>
+								<li class="menu-element"><a href="#" class="menu-link">single project 2</a></li>
+							</ul>
+						</li>
+						<li class="menu-element">
+							<a href="blog.html" class="menu-link">blog</a>
+							<ul class="menu-option">
+								<li class="menu-element"><a href="#" class="menu-link">post list</a></li>
+								<li class="menu-element"><a href="#" class="menu-link">single post</a></li>
+							</ul>
+						</li>
+						<li class="menu-element">
+							<a href="contact.us" class="menu-link">contact us</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		
+	</header>
+	<!-- <section class="main_screen">
+			<div class="container">
+				<div class="row">
+					
 				</div>
-				<div class="col-6">
-					<div class="menu">
-						<a href="#" class="menu-link">
-							<span class="menu-burger"></span>
-						</a>
+				<div class="main_screen-hover">
+						<span class="main_screen-blue_block">we're</span>
+						<h1 class="main_screen-header">creative agency</h1>
+						<p class="main_screen-text text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br> tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="row history">
+					<div class="col-6">
+							<img src="img/history.png" alt="image" class="history-img img-fluid">
+					</div>
+					<div class="col-6">
+						<h1 class="history-header header"><span class="blue_block"></span>HISTORY OF AGENCY</h1>
+						<p class="history-text text">Porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi modi tempora incidunt ut labore.</p>
+						<button class="blue_button history-button">read more</button>
+	
 					</div>
 				</div>
 			</div>
-			<div class="main_screen-hover">
-					<span class="main_screen-blue_block">we're</span>
-					<h1 class="main_screen-header">creative agency</h1>
-					<p class="main_screen-text text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br> tempor incididunt ut labore et dolore magna aliqua.</p>
-			</div>
-			<div class="row history">
-				<div class="col-6">
-						<img src="img/history.png" alt="image" class="history-img img-fluid">
-				</div>
-				<div class="col-6">
-					<h1 class="history-header header"><span class="blue_block"></span>HISTORY OF AGENCY</h1>
-					<p class="history-text text">Porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi modi tempora incidunt ut labore.</p>
-					<button class="blue_button history-button">read more</button>
+		</section> -->
+<!-- 
 
-				</div>
-			</div>
-		</div>
-	</section>
+	
 	<section class="reason">
 		<div class="container">
 			<div class="reason-hover">
@@ -149,7 +189,6 @@
 			</div>
 		</div>
 	</section>
-
 	<section class="send">
 		<div class="container-fluid">
 			<div class="row">
@@ -168,10 +207,65 @@
 			</div>
 		</div>
 	</section>
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-6">
+						<ul class="footer-inner_list">
+							<li class="footer-inner_element">
+								<a href="#" class="footer-inner_link">Home</a>
+							</li>
+							<li class="footer-inner_element">
+								<a href="#" class="footer-inner_link">about us</a>
+							</li>
+							<li class="footer-inner_element">
+								<a href="#" class="footer-inner_link">services</a>
+							</li>
+							<li class="footer-inner_element">
+								<a href="#" class="footer-inner_link">portfolio</a>
+							</li>
+							<li class="footer-inner_element">
+								<a href="#" class="footer-inner_link">blog</a>
+							</li>
+							<li class="footer-inner_element">
+								<a href="#" class="footer-inner_link">contact us</a>
+							</li>
+						</ul>
+					</div>
+				<div class="col-5 offset-1">
+					<div class="footer-social">
+						<p class="footer-author">Created by akhouad 2016. All Rights Reserved</p>
+						<ul class="footer-social_list">
+							<li class="footer-social_element"><a href="#" class="footer-social_links">
+									<ion-icon name="logo-facebook"></ion-icon>
+							</a></li>
+							<li class="footer-social_element"><a href="" class="footer-social_links">
+									<ion-icon name="logo-twitter"></ion-icon>
+							</a></li>
+							<li class="footer-social_element"><a href="" class="footer-social_links">
+									<ion-icon name="logo-youtube"></ion-icon>
+							</a></li>
+							<li class="footer-social_element"><a href="" class="footer-social_links">
+									<ion-icon name="logo-youtube"></ion-icon>
+							</a></li>
+							<li class="footer-social_element"><a href="" class="footer-social_links">
+									<ion-icon name="logo-pinterest"></ion-icon>
+							</a></li>
+							<li class="footer-social_element"><a href="" class="footer-social_links">
+									<ion-icon name="logo-instagram"></ion-icon>
+							</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer> -->
+
 	<!--Стили иконок-->
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+	<script src="js/script.js"></script>
 </body>
 </html>
