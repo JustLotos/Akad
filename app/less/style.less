@@ -47,6 +47,36 @@
 
   }
 }
+
+.header {
+  .Monts;
+  color: @grey;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 48px;
+  z-index: 10;
+  position: relative;
+}
+
+.blue_block {
+  position: absolute;
+  display: block;
+  background-color: #7beec7;
+  width: 67px;
+  height: 21px;
+  top: 50%;
+  left: 50%;
+  margin-left: -33px;
+  z-index: -1;
+}
+.blue_button{
+  .Monts;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: none;
+  background-color: @blue;
+  color: white;
+}
 /* #region */
 // .text{
 //   .OpenSans;
@@ -54,32 +84,9 @@
 //   line-height: 24px;
 //   font-size: 14px;
 // }
-// .header {
-//   .Monts;
-//   color: @grey;
-//   text-transform: uppercase;
-//   font-size: 30px;
-//   line-height: 48px;
-//   z-index: 10;
-//   position: relative;
-// }
-// .blue_block {
-//   position: absolute;
-//   display: block;
-//   background-color: #7beec7;
-//   width: 67px;
-//   height: 21px;
-//   top: 22px;
-//   z-index: -1;
-// }
-// .blue_button{
-//   .Monts;
-//   font-size: 14px;
-//   text-transform: uppercase;
-//   border: none;
-//   background-color: @blue;
-//   color: white;
-// }
+
+
+
 // .logo{
 //   .Monts;
 //   display: block;
@@ -237,7 +244,7 @@
   }
   // Анимация появления меню
   &-opened{
-    //height: 240px;
+    height: 240px;
     transition: all 1s;
     transform: scaleY(1);
     // transition-property: height, scale;
@@ -245,7 +252,7 @@
     // transition-timing-function: linear;
   }
   &-closed{
-    //height: 0;
+    height: 0;
     transition: all 1s;
     transform: scaleY(0);
     
@@ -322,67 +329,82 @@
 }
 
 
-// .main_screen{
-//   background-image: url(../img/bg_main_screen.png);
-// 	background-size: cover;
-//   height: 850px; 
-//    &-hover{
-//     margin-top: 150px;
-//     text-align: center;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
+.main_screen{
+  background-image: url(../img/bg_main_screen.png);
+	background-size: cover;
+  height: 850px; 
+   &-hover{
+    margin-top: 150px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-//   }
-//   &-blue_block{
-//     display: inline-block;
-//     .Monts;
-//     background-color: @blue;
-//     padding: 10px 21px;
-//     color: @grey;
-//     line-height: 18px;
-//     font-size: 18px;
-//     text-transform: uppercase;
-//   }
-//   &-header{
-//     .Monts;
-//     padding: 33px 47px;
-//     font-size: 48px;
-//     line-height: 48px;
-//     text-transform: uppercase;
-//     color: @grey;
-//     border: 10px solid @grey;
+  }
+  &-blue_block{
+    display: inline-block;
+    .Monts;
+    background-color: @blue;
+    padding: 7px 18px;
+    color: @grey;
+    line-height: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  &-header{
+    .Monts;
+    padding: 33px 47px;
+    font-size: 48px;
+    line-height: 48px;
+    text-transform: uppercase;
+    color: @grey;
+    border: 10px solid @grey;
+  }
+  &-text{
+    line-height: 24px;
+    margin: 20px auto;
+    line-height: 2;
+    width: 50%;
+    color: @grey;
+  }
+}
 
-//   }
-//   &-text{
-//     line-height: 24px;
-//   }
-// }
+.history{
+  margin-top: 20px;
+  &-text{
+    color: @grey;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    padding: 10px;
+  }
+  &-header{
+    text-align: center;
+  }
+  &-img{
+    display: block;
+    margin: 0 auto;
+  }
+  &-button{
+    cursor: pointer;
+    position: relative;
+    left: 100%;
+    margin-top: 20px;
+    margin-left: -200px;
+    padding: 15px 40px;
+    &:hover{
+      transition: 0.3s;
+      transform: scale(1.01);
+      box-shadow: 0 0 10px rgba(0,0,0,.2);
+    }
+  }
+}
 
 /* #region */
 
 
 
-
-
-// .history{
-//   margin-top: 100px;
-//   &-text{
-//     margin-bottom: 0;
-    
-//     line-height: 30px;
-//     font-size: 16px;
-//   }
-//   &-button{
-//     cursor: pointer;
-//     position: relative;
-//     left: 100%;
-//     margin-top: 25px;
-//     margin-left: -165px;
-//     padding: 20px 50px;
-//   }
-// }
 
 // .reason{
  
@@ -582,8 +604,7 @@
         width: 40%;
         background-color: @grey;
         transition: all 0.5s; 
-        transform: translateY(20px) scale(0);
-        
+        transform: translateY(20px) scale(0);        
       }
       &:hover{
         color: @grey;
@@ -591,11 +612,26 @@
           transform: translateY(1px) scale(1);
         }
       }
-      
     }
     &-burger{
       display: none;
     }
+  }
+  .history{
+    margin-top: -300px;
+    &-text{
+    text-align: left;
+    padding: 10px 0px;
+    }
+    &-header{
+      text-align: left;
+      margin-bottom: 20px;
+    }
+  }
+  .blue_block{
+    top: 21px;
+    margin-left: 0;
+    left: 0;
   }
 }
 
