@@ -29,6 +29,7 @@
 //----------- COMPONENTS --------------------------------------------------------------------------
 .logo{
     .Monts;
+    
     display: block;
     text-transform: uppercase;
     font-size: 18px;
@@ -64,9 +65,9 @@
   background-color: #7beec7;
   width: 67px;
   height: 21px;
-  top: 50%;
-  left: 50%;
-  margin-left: -33px;
+  top:21px;
+  left: 0;
+  //margin-left: -33px;
   z-index: -1;
 }
 .blue_button{
@@ -77,13 +78,15 @@
   background-color: @blue;
   color: white;
 }
+
+.text{
+  .OpenSans;
+  color: lighten(@grey, 10%);
+  line-height: 2;
+  font-size: 16px;
+}
 /* #region */
-// .text{
-//   .OpenSans;
-//   color: lighten(@grey, 10%);
-//   line-height: 24px;
-//   font-size: 14px;
-// }
+
 
 
 
@@ -188,11 +191,14 @@
 
 /* #endregion */
 //----------- MODULES --------------------------------------------------------------------------
-.header{
-  height: auto;
+.head{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
-
 .menu{
+  z-index: 10px;
   position: relative;
   transform-origin: top;
   // Основное меню
@@ -220,6 +226,7 @@
     font-size: 12px;
     line-height: 40px;
     &:hover{
+      transition: all 0.3s;
       background-color: darken( @grey, 10%);
       .menu-option{
         transition: transform 0.3s;
@@ -233,7 +240,7 @@
     height: 120px;
     transform-origin: top;
     
-    transition: transform 1s;
+    transition: transform 0.5s;
     transform: scaleY(0);
     .menu-element{
       
@@ -245,7 +252,7 @@
   // Анимация появления меню
   &-opened{
     height: 240px;
-    transition: all 1s;
+    transition: all 0.7s;
     transform: scaleY(1);
     // transition-property: height, scale;
     // transition-duration: 0.7s;
@@ -253,7 +260,7 @@
   }
   &-closed{
     height: 0;
-    transition: all 1s;
+    transition: all  0.5s;
     transform: scaleY(0);
     
     // transition-property: height, scale;
@@ -327,14 +334,12 @@
   }
   
 }
-
-
 .main_screen{
   background-image: url(../img/bg_main_screen.png);
-	background-size: cover;
-  height: 850px; 
+  background-size: cover;
+  height: 160vh; 
    &-hover{
-    margin-top: 150px;
+    margin-top: 200px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -369,7 +374,6 @@
     color: @grey;
   }
 }
-
 .history{
   margin-top: 20px;
   &-text{
@@ -379,8 +383,12 @@
     font-size: 16px;
     padding: 10px;
   }
+  &-hover{
+    text-align: center;
+  }
   &-header{
     text-align: center;
+    display: inline-block;
   }
   &-img{
     display: block;
@@ -389,126 +397,191 @@
   &-button{
     cursor: pointer;
     position: relative;
-    left: 100%;
+    left: 50%;
     margin-top: 20px;
     margin-left: -200px;
     padding: 15px 40px;
+    transition: 0.3s;
     &:hover{
-      transition: 0.3s;
       transform: scale(1.01);
       box-shadow: 0 0 10px rgba(0,0,0,.2);
     }
   }
 }
+.reason{
+  
+  height: 370vh;
+  &-hover{
+    line-height: 2;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 25vh;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+  &-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  &-box{
+    margin-bottom: 50px;
+    flex-basis: 100%;
+  }
+  &-list_header{
+    .Monts;
+    display: block;
+    text-transform: uppercase;
+    color: @grey;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  &-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &-icon{
+    text-transform: uppercase;
+    color: lighten(@grey, 30%);
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 36px;
+    margin-bottom: 20px;
+  }
+  &-element{
+    color: lighten(@grey, 15%);
+  }
+  &-img{
+    display: block;
+    margin: 0 auto;
+  }
+}
+.portfolio{
+  height: 200vh;
+  margin-bottom: 350px;
+  &-hover{
+    margin: 100px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &-header{
+    margin-bottom: 50px;
+  }
+  &-subhead{
+    width: 50%;
+  }
+  &-choose{
+    text-align: center;
+  }
+  &-list{
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &-element{
+    .Monts;
+    text-transform: uppercase;
+    margin-left: 15px;
+    font-size: 14px;
+    color: lighten(@grey, 5%);
+    margin-bottom: 25px;
+  }
+  &-link{
+    color: @grey;
+    &:hover{
+      text-decoration: none;
+      color: @grey;
+    }
+  }
+  &-active_link{
+    position: relative;
+    
+    background-color: @blue;
+    display: inline-block;
+    padding: 3px 20px;
+    margin-left: 0;
+    .portfolio-link {
+      color: white;
+    }
+  }
+  
+  
 
+  //Анимация картинок
+  &-wrapper_box{
+    display: flex; 
+    justify-content: center;
+  }
+  &-box{
+    align-self: center;
+    width: 262px;
+    position: relative;
+    margin: 15px 0;
+    text-transform: uppercase;
+    overflow: hidden;
+    &-name{
+      .Monts;
+      font-size: 20px;
+      color: @grey;
+      transition: all 0.3s;
+    }
+    &-text{
+      color: white;
+      background-color: @blue;
+      padding: 10px;
+    }
+    &:hover{
+      .portfolio-wrapper{
+        transform: translateX(0);
+      }
+    }
+  }
+  &-link_hover{
+    //display: inline-block;
+    height: 100%;
+    width: auto;
+    transition: 0.2s;
+    cursor: pointer;
+    
+  }
+  &-wrapper{
+    transition: transform 1s ;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0,0,0,.3);
+    transform: translateX(-100%);
+  }
+  &-img{
+    display: block;
+    margin: 0 auto;
+   
+  }
+}
 /* #region */
 
 
 
 
-// .reason{
- 
-//   height: 100vh;
-//   &-hover{
-//     margin-top: 250px;
-//     margin-bottom: 100px;
-//     text-align: center;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//   }
-//   &-container{
-//     display: flex;
-//     justify-content: space-between;
-//     flex-wrap: wrap;
-//   }
-//   &-box{
-//     margin-bottom: 50px;
-//     flex-basis: 230px;
-//     margin-right: 80px;
-//   }
-//   &-list_header{
-//     .Monts;
-//     display: block;
-//     text-transform: uppercase;
-//     color: @grey;
-//     font-size: 18px;
-//     margin-bottom: 20px;
-//   }
-//   &-list{
-//     list-style: none;
-//     margin: 0;
-//     padding: 0;
-//   }
-//   &-icon{
-//     display: block;
-//     text-transform: uppercase;
-//     color: lighten(@grey, 14%);
-//     font-weight: 300;
-//     font-size: 36px;
-//     line-height: 36px;
-//     margin-bottom: 20px;
-//   }
-//   &-element{
-//     color: lighten(@grey, 15%);
-//   }
-//   &-img{
-//     display: block;
-    
-//   }
-// }
 
-// .portfolio{
-//   height: 150vh;
-//   margin-bottom: 350px;
-//   &-hover{
-//     margin: 100px 0;
-//     text-align: center;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//   }
-//   &-header{
-//     margin-bottom: 50px;
-//   }
-//   &-list{
-//     display: block;
-//     list-style: none;
-//     margin: 0;
-//     padding: 0;
-//   }
-//   &-element{
-//     .Monts;
-//     text-transform: uppercase;
-//     margin-left: 15px;
-//     font-size: 14px;
-//     color: lighten(@grey, 5%);
-//     margin-bottom: 25px;
-//   }
-//   &-link{
-//     color: @grey;
-//     &:hover{
-//       text-decoration: none;
-//       color: @grey;
-//     }
-//   }
-//   &-active_link{
-//     position: relative;
-    
-//     background-color: @blue;
-//     display: inline-block;
-//     padding: 3px 20px;
-//     margin-left: 0;
-//     .portfolio-link {
-//       color: white;
-//     }
-//   }
-//   &-img{
-//     margin: 15px;
-//   }
-// }
+
 
 // .footer{
 //   padding: 50px 0px;
@@ -566,11 +639,13 @@
 // Медиавыражения
 
 @media screen and (min-width: 992px){
-  .header{
+  .head{
     .container{
       display: flex;
       justify-content: space-between;
     }
+    justify-content: space-between;
+    
   }
   .menu{
     flex-basis: fill;
@@ -626,6 +701,24 @@
     &-header{
       text-align: left;
       margin-bottom: 20px;
+    }
+  }
+  .reason{
+    height: 150vh;
+    &-hover{
+      width: 50%;
+    }
+    &-box{
+      flex-basis: 230px;
+      text-align: left;
+    }
+    &-header{
+      display: inline-block;
+    }
+  }
+  .portfolio{
+    &-choose{
+      text-align: left;
     }
   }
   .blue_block{
