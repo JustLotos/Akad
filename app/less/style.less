@@ -460,7 +460,7 @@
 }
 .portfolio{
   height: 200vh;
-  margin-bottom: 350px;
+  margin-bottom: 100px;
   &-hover{
     margin: 100px 0;
     text-align: center;
@@ -469,9 +469,7 @@
     align-items: center;
     flex-direction: column;
   }
-  &-header{
-    margin-bottom: 50px;
-  }
+  
   &-subhead{
     width: 50%;
   }
@@ -479,34 +477,48 @@
     text-align: center;
   }
   &-list{
-    display: block;
+    display: flex;
+    flex-direction: column;
     list-style: none;
     margin: 0;
     padding: 0;
   }
   &-element{
     .Monts;
+    padding: 3px 20px;
+    
     text-transform: uppercase;
-    margin-left: 15px;
+    //margin-left: 15px;
     font-size: 14px;
     color: lighten(@grey, 5%);
     margin-bottom: 25px;
+    transition: background-color 0.5s, transform 0.5s, box-shadow 0.5s;
+    &:hover{
+      background-color: @blue;
+      transform: scale(1.01);
+      box-shadow: 0 0 10px rgba(0,0,0,.2);
+    }
   }
-  &-link{
+  &-link_menu{
     color: @grey;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
     &:hover{
       text-decoration: none;
-      color: @grey;
+      color: white;
     }
   }
   &-active_link{
     position: relative;
-    
     background-color: @blue;
-    display: inline-block;
-    padding: 3px 20px;
-    margin-left: 0;
-    .portfolio-link {
+    
+    
+    transform: scale(1.01);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+  
+    //margin-left: 0;
+    .portfolio-link_menu {
       color: white;
     }
   }
@@ -719,6 +731,12 @@
   .portfolio{
     &-choose{
       text-align: left;
+    }
+    &-element{
+      padding-left: 30px;
+    }
+    &-active_link{
+      margin-left: -15px;
     }
   }
   .blue_block{

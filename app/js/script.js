@@ -10,11 +10,14 @@ window.onload = function () {
 		menu.classList.toggle('menu-closed');
 		menu.classList.toggle('menu-opened');
 		
-		
-
-			//setTimeout(menu.classList.add('dnone'), 5000);
-			
-			//menu.classList.remove('dblock');
-			
 	});
+
+	var portfolioList = document.querySelectorAll('.portfolio-list');
+
+	portfolioList.addEventListener('click', (event) => {
+		console.log(event.target);
+	});
+	
+
+
 }
